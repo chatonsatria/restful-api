@@ -9,8 +9,25 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     require: [true, "Password cannot be empty"],
-    unique: false,
   },
+  first_name: {
+    type: String,
+    require: [true, "First name cannot be empty"],
+  },
+  last_name: {
+    type: String,
+    require: [true, "Last name cannot be empty"],
+  },
+  role: {
+    type: Array,
+    require: [true, "Role cannot be empty"],
+  },
+  books: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Books",
+    },
+  ],
 });
 
-module.exports = mongoose.model.Users || mongoose.model("Users", userSchema);
+module.exports = mongoose.model("Users", userSchema);
