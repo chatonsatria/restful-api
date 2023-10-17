@@ -4,11 +4,11 @@ const helmet = require("helmet");
 
 const port = process.env.PORT ?? 3000;
 
-const loggerMiddleware = (req, res, next) => {
-  const currentTimestamp = new Date().toISOString();
-  console.log(`[${currentTimestamp}] ${req.method} ${req.url}`);
-  next();
-};
+// const loggerMiddleware = (req, res, next) => {
+//   const currentTimestamp = new Date().toISOString();
+//   console.log(`[${currentTimestamp}] ${req.method} ${req.url}`);
+//   next();
+// };
 
 app.use(helmet());
 app.set("port", port);
